@@ -43,8 +43,21 @@ form {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    width: 50%;
+    width: 700px;
     position: relative;
+}
+
+form.error input[type="email"] {
+    border-color: var(--LightRed);
+    margin-bottom: 30px;
+}
+
+form.error .error-text{
+    position: absolute;
+    top: 70px;
+    font-size: .95rem;
+    margin-top: 10px;
+    color: var(--LightRed);
 }
 
 form input[type="email"] {
@@ -59,6 +72,12 @@ form input[type="email"] {
     margin-right: 10px;
 }
 
+.hero-img{
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
 form input[type="email"]::placeholder {
     color: var(--PaleBlue);
     font-family:'Libre Franklin', sans-serif;
@@ -67,7 +86,7 @@ form input[type="email"]::placeholder {
 form button[type="submit"] {
     background-color: var(--Blue);
     height: 50px;
-    width: 50%;
+    width: 40%;
     border: none;
     border-radius: 50px;
     color: white;
@@ -78,6 +97,10 @@ form button[type="submit"] {
     box-shadow: 0 0 20px hsl(223, 87%, 63%, 0.32);
     cursor: pointer;
     outline: none;
+}
+
+form.error .error-text {
+    left: 35px;
 }
 
 
@@ -101,4 +124,24 @@ form button[type="submit"] {
     margin-top: 20px;
     margin-bottom: 40px;
     text-align: center;
+}
+
+@media only screen and (max-width: 787px) {
+    form {
+        flex-direction: column;
+        width: 100%;
+    }
+    form button[type="submit"] {
+        width: 100%;
+        margin-top: 20px;
+    }
+    form.error .error-text{
+        position: absolute;
+        top: 70px;
+        font-size: .95rem;
+        margin-top: 10px;
+        color: var(--LightRed);
+        font-weight: 500;
+        font-style: italic;
+    }
 }
